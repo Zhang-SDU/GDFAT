@@ -1,3 +1,10 @@
+Usage
+-----
+
+Faulting multiple times the tables requires many disk writes so we'll do it in a tmpfs.  
+All steps are performed by ```attack.sh```:
+
+```bash
 #!/bin/bash
 
 mkdir -p tmp
@@ -9,3 +16,9 @@ cd tmp
 ulimit -c 0
 cp -a sm4_enc sm4_enc.gold
 ./attack_sm4.py
+```
+
+Adapt it to your setup if needed. 
+
+It requires ```sm4Fault.py``` and ```sm4DA.py``` from this repository.
+
