@@ -5,18 +5,20 @@ Faulting multiple times the tables requires many disk writes so we'll do it in a
 All steps are performed by ```attack.sh```:
 
 ```bash
+#!/bin/bash
+
 mkdir -p tmp
 mount|grep -q $(pwd)/tmp || sudo mount -t tmpfs -o mode=01777,size=20m tmpfs tmp
-cp attack_nsc.py ../../deadpool_dfa.py ../../../JeanGrey/phoenixAES.py tmp
-cp ../target/nosuchcon_2013_whitebox_allenc.c ../target/nosuchcon_2013_whitebox_allenc_generator.c tmp
+cp attack_sm4.py ../sm4Fault.py ../sm4DA.py ../sm4_keyschedule tmp
+cp ../sm4_bool/sm4_enc tmp
 cd tmp
-gcc -o nosuchcon_2013_whitebox_allenc_generator nosuchcon_2013_whitebox_allenc_generator.c
-gcc -o nosuchcon_2013_whitebox_allenc nosuchcon_2013_whitebox_allenc.c
-./nosuchcon_2013_whitebox_allenc_generator
-mv wbt_allenc wbt_allenc.gold
-./attack_nsc.py
+ulimit -c 0
+./sm4_enc
+mv sm4_enc sm4_enc.gold
+./attack_sm4.py
 ```
 
 Adapt it to your setup if needed. 
+
 It requires ```sm4Fault.py``` and ```sm4DA.py``` from this repository.
 
