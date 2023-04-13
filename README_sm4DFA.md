@@ -102,8 +102,10 @@ You can interrupt the script with a SIGINT (ctrl-C), it will save the current tr
 
 ## ```sm4DA.py```
 It takes a file of recorded outputs, optionally preceded by inputs (which will be ignored).
-First record must be with the correct output, to be used as reference.   
-
+First record must be with the correct output, to be used as reference.     
+    
+    
+    
 Typical usage:
 ```python
 import sys
