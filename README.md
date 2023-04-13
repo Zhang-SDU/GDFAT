@@ -1,11 +1,13 @@
-# GDFAT
+# GDFAT ------ Differential Fault Analysis    
 
-This is a generic differential fault analysis tool.
+This is a generic differential fault analysis tool.     
 
-You can use this tool to perform differential fault analysis on any white box implementation of the SM4 algorithm.
+Here we give six examples of applied DFA attacks agains white-box implementations.    
 
-If you have any questions, you can contact me!
+You can use this tool to perform differential fault analysis on any white box implementation of the SM4 algorithm.    
 
-Email:1146918446@qq.com
+If you have any questions, you can contact me!    
 
-![img](https://github.com/Zhang-SDU/cst-project/blob/main/readme.gif)
+Email:1146918446@qq.com   
+
+![img](https://github.com/Zhang-SDU/cst-project/blob/main/readme.gif)  
