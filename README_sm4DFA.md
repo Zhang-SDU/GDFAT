@@ -101,13 +101,21 @@ You can interrupt the script with a SIGINT (ctrl-C), it will save the current tr
 
 
 Typical usage:
-
 ```python
-import deadpool_dfa
-import phoenixAES
-engine=deadpool_dfa.Acquisition(targetbin='./whitebox', targetdata='whitebox-tables.bin', goldendata='whitebox-tables.bin.gold', dfa=phoenixAES)
-tracefiles=engine.run()
-for tracefile in tracefiles:
-    if phoenixAES.crack(tracefile):
+import sys
+import sm4Fault
+import sm4DA
+import os
+
+engine = sm4Fault.Acquisition(targetbin='./sm4_enc', targetdata='./sm4_enc', goldendata='./sm4_enc.gold', dfa=sm4DA,verbose=2, faults_number=128)
+                             
+tracefiles_sets = engine.run()
+for tracefile in tracefiles_sets[0]:
+    roundkey = sm4DA.crack_file(tracefile)
+    if roundkey:
+        print("\nAll_round_key And The Seed_Key Are Recovered!\n")
+        os.system('./sm4_keyschedule ' + str(hex(roundkey[3])[2:].rjust(8, '0')) + ' ' + str(
+            hex(roundkey[2])[2:].rjust(8, '0')) + ' ' + str(hex(roundkey[1])[2:].rjust(8, '0')) + ' ' + str(
+            hex(roundkey[0])[2:].rjust(8, '0')) + ' 32')
         break
 ```
