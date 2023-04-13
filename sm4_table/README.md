@@ -6,7 +6,7 @@ Here are two versions based on chow table but only internal encodings.
 One file version
 ---------------------
 
-```sm4.h``` is the header file for ```sm4_table_generator.c```. 
+```sm4.h``` is the header file for ```sm4_table_generator.c```.   
 ```sm4_table_generator.c``` is the generator code to generate table.  
 ```sm4_enc.c``` is using the generated tables by ```include``` to encrypt any plaintext.  
 
