@@ -23,7 +23,7 @@ Two file version
 -------------------------------
 
 ```sm4_table_generator.c``` is the generator code to generate table.  
-```sm4_enc``` is using the generated tables by ```fopen and fread ``` to encrypt any plaintext. 
+```sm4_enc``` is using the generated tables by ```fopen and fread``` to encrypt any plaintext. 
 
 ```bash
 gcc sm4_table_generator.c -o sm4_table_generator
