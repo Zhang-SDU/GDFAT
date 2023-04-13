@@ -73,11 +73,11 @@ Therefore internally processoutput is wrapped in a try-catch that will output ``
   * ```addresses```: (tuple) address range within ```goldendata``` where to inject faults; or (str) '/path/to/logfile' to replay address ranges specified in this log file, see below  
   Default: None => the entire address range of ```goldendata```
   * ```start_from_left```: (bool) scan should start from left? Else from right. Note that DFA attacks one of the last rounds so it may be faster starting from the right.       
-  Default: True
+  Default: False
   * ```depth_first_traversal```: (bool) scan should dig from ```maxleaf``` to ```minleaf``` elements before getting to the next ```maxleaf``` segment? Else try all ```maxxleaf``` segments before going one level down.        
   Default: False
   * ```faults```: (int) once a ```minleafnail``` segment gives a good fault output, how many times the fault injection is performed at the same location?(with other random values)?   
-  Default: 4 
+  Default: 1 
   * ```faults_number```: (int) How many fault outputs need to be found?    
   Default: 128
   * ```timeoutfactor```: (int or float) to detect potentially infinite loops, the script measures the process time under normal conditions and interrupts the faulted process after ```timeoutfactor``` times the normal processing time.     
