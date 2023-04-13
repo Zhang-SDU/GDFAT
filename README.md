@@ -1,4 +1,4 @@
-# GDFAT ------ Differential Fault Analysis    
+# GDFAT ------ Generic Differential Fault Analysis Tool    
 
 This is a generic differential fault analysis tool.     
 
