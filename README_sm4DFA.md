@@ -72,9 +72,9 @@ Therefore internally processoutput is wrapped in a try-catch that will output ``
   Default: 8
   * ```addresses```: (tuple) address range within ```goldendata``` where to inject faults; or (str) '/path/to/logfile' to replay address ranges specified in this log file, see below  
   Default: None => the entire address range of ```goldendata```
-  * ```start_from_left```: (bool) scan should start from left? Else from right. Note that DFA attacks one of the last rounds so it may be faster starting from the right.
+  * ```start_from_left```: (bool) scan should start from left? Else from right. Note that DFA attacks one of the last rounds so it may be faster starting from the right.    
   Default: True
-  * ```depth_first_traversal```: (bool) scan should dig from ```maxleaf``` to ```minleaf``` elements before getting to the next ```maxleaf``` segment? Else try all ```maxxleaf``` segments before going one level down
+  * ```depth_first_traversal```: (bool) scan should dig from ```maxleaf``` to ```minleaf``` elements before getting to the next ```maxleaf``` segment? Else try all ```maxxleaf``` segments before going one level down.     
   Default: False
   * ```faults```: (int) once a ```minleafnail``` segment gives a good fault output, how many times the fault injection is performed at the same location?(with other random values)?   
   Default: 4 
@@ -86,7 +86,7 @@ Therefore internally processoutput is wrapped in a try-catch that will output ``
   Default: ```'default'```
   * ```logfile```: (str)Default: None
 
-  * ```outputbeforelastrounds``` (bool) when attacking previous rounds, indicate what kind of output to record: the real output or the virtual output once the known last rounds are removed.
+  * ```outputbeforelastrounds``` (bool) when attacking previous rounds, indicate what kind of output to record: the real output or the virtual output once the known last rounds are removed.      
   Default: False
   
 
