@@ -78,14 +78,13 @@ Therefore internally processoutput is wrapped in a try-catch that will output ``
   Default: False
   * ```faults```: (int) once a ```minleafnail``` segment gives a good fault output, how many times the fault injection is performed at the same location?(with other random values)?   
   Default: 4 
-  * ```faults_number```: (int) How many fault outputs need to be found?
+  * ```faults_number```: (int) How many fault outputs need to be found?    
   Default: 128
-  * ```timeoutfactor```: (int or float) to detect potentially infinite loops, the script measures the process time under normal conditions and interrupts the faulted process after ```timeoutfactor``` times the normal processing time.
+  * ```timeoutfactor```: (int or float) to detect potentially infinite loops, the script measures the process time under normal conditions and interrupts the faulted process after ```timeoutfactor``` times the normal processing time.     
   Default: 2
-  * ```savetraces_format```: (str) ```'default'``` will save inputs and faulty outputs in a very basic format, suitable for sm4DA.
+  * ```savetraces_format```: (str) ```'default'``` will save inputs and faulty outputs in a very basic format, suitable for sm4DA.     
   Default: ```'default'```
-  * ```logfile```: (str) 
-  Default: None
+  * ```logfile```: (str)Default: None
 
   * ```outputbeforelastrounds``` (bool) when attacking previous rounds, indicate what kind of output to record: the real output or the virtual output once the known last rounds are removed.
   Default: False
