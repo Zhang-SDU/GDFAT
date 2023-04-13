@@ -96,8 +96,13 @@ Default saved traces format is very basic: ```dfa_<<enc/dec>>>_<<begin_timestamp
 First record is the one with the correct output, to be used as reference by the DFA tool.
 
 If the attack is running for long and you want to try a DFA attack on intermediate results, send a SIGUSR1 and it will dump an intermediate tracefile.
-You can interrupt the script with a SIGINT (ctrl-C), it will save the current tracefile as well before quitting.
+You can interrupt the script with a SIGINT (ctrl-C), it will save the current tracefile as well before quitting.    
 
+
+
+##```sm4DA.py```   
+It takes a file of recorded outputs, optionally preceded by inputs (which will be ignored).
+First record must be with the correct output, to be used as reference.   
 
 Typical usage:
 ```python
